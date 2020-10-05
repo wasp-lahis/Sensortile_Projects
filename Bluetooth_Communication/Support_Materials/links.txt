@@ -1,0 +1,7 @@
+
+DOC
+https://www.st.com/en/embedded-software/bluest-sdk.html#overview
+https://github.com/STMicroelectronics/BlueSTSDK_Python
+
+API
+https://stmicroelectronics.github.io/BlueSTSDK_Python/blue_st_sdk.html

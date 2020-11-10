@@ -1,11 +1,21 @@
 #!/usr/bin/env python
 
+# AUTHOR
+#
+# Lahis Almeida (lahis.almeida@eldorado.org.br)
+
+
+# CODE BASED ON
+#
+# https://github.com/STMicroelectronics/BlueSTSDK_Python/blob/master/blue_st_examples/example_ble_1.py
+
 
 # DESCRIPTION
 #
-# This application example shows how to perform a Bluetooth Low Energy (BLE)
-# scan, connect to a device, retrieve its exported features, and get push
-# notifications from it.
+# This application example shows how to perform BLE scan, 
+# connect to a device, retrieve its exported features (ACC data)
+# and get push notifications from it.
+
 
 
 # IMPORT
@@ -18,7 +28,7 @@ from blue_st_sdk.manager import Manager
 from blue_st_sdk.features.audio.adpcm.feature_audio_adpcm import FeatureAudioADPCM
 from blue_st_sdk.features.audio.adpcm.feature_audio_adpcm_sync import FeatureAudioADPCMSync
 
-import ble_interfaces_acc
+import ble_interfaces
 
 
 # CONSTANTS
@@ -27,8 +37,7 @@ import ble_interfaces_acc
 SCANNING_TIME_s = 5
 
 # Sensortile Mac Address
-SENSORTILE_MAC_ADDRESS = "ce:ea:9c:a0:f6:8a"
-#SENSORTILE_MAC_ADDRESS = "MAC ADDRESS OF YOUR SENSORTILE BOARD"
+SENSORTILE_MAC_ADDRESS = "xx:xx:xx:xx:xx:xx"
 
 
 # MAIN APPLICATION
@@ -38,7 +47,7 @@ def main(argv):
     try:
         # Creating Bluetooth Manager.
         manager = Manager.instance()
-        manager_listener = ble_interfaces_acc.MyManagerListener()
+        manager_listener = ble_interfaces.MyManagerListener()
         manager.add_listener(manager_listener)
 
         # Synchronous discovery of Bluetooth devices.
@@ -64,7 +73,7 @@ def main(argv):
             sys.exit(0)
 
         device = discovered_devices[sensortile_index]
-        node_listener = ble_interfaces_acc.MyNodeListener()
+        node_listener = ble_interfaces.MyNodeListener()
         device.add_listener(node_listener)
 
         # Connecting to the device.
@@ -76,7 +85,7 @@ def main(argv):
         
 
         # Getting features.
-        feature_listener = ble_interfaces_acc.MyFeatureListener()
+        feature_listener = ble_interfaces.MyFeatureListener()
         features = device.get_features()
         for feature in features:
             if feature.get_name() == "Accelerometer":

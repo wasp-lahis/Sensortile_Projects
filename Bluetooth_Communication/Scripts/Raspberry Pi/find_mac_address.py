@@ -1,5 +1,15 @@
 #!/usr/bin/env python
 
+# AUTHOR
+#
+# Lahis Almeida (lahis.almeida@eldorado.org.br)
+
+
+# CODE BASED ON
+#
+# https://github.com/STMicroelectronics/BlueSTSDK_Python/blob/master/blue_st_examples/example_ble_1.py
+
+
 # DESCRIPTION
 #
 # This code perform a Bluetooth Low Energy (BLE) scan.

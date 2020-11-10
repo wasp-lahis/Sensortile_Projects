@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 
+# AUTHOR
+#
+# Lahis Almeida (lahis.almeida@eldorado.org.br)
+
+
+# CODE BASED ON
+#
+# https://github.com/STMicroelectronics/BlueSTSDK_Python/blob/master/blue_st_examples/example_ble_1.py
+
 
 # DESCRIPTION
 #
-# This application example shows how to perform a Bluetooth Low Energy (BLE)
-# scan, connect to a device, retrieve its exported features, and get push
-# notifications from it.
+# This application example shows how to perform BLE scan,
+# connect to a device and retrieve its exported features.
 
 
 # IMPORT
@@ -26,8 +34,7 @@ import ble_interfaces
 SCANNING_TIME_s = 5
 
 # Sensortile Mac Address
-SENSORTILE_MAC_ADDRESS = "ce:ea:9c:a0:f6:8a"
-#SENSORTILE_MAC_ADDRESS = "MAC ADDRESS OF YOUR SENSORTILE BOARD"
+SENSORTILE_MAC_ADDRESS = "xx:xx:xx:xx:xx:xx"
 
 
 # MAIN APPLICATION
